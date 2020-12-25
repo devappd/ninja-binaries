@@ -17,6 +17,15 @@ if (os.platform() === 'darwin') {
 
 let cmd = path.join(__dirname, 'binaries', binary);
 let args = process.argv.slice(2);
+
+// HACK: Wrap quotes around paths to fix space usage
+args = args.map(val => {
+	if (path.isAbsolute(val))
+		return `"${val}"`;
+	else
+		return val;
+});
+
 let ps = spawn(`"${cmd}"`, args, {
 	shell: true,
 	stdio: 'inherit'
