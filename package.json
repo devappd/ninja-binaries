@@ -3,7 +3,7 @@
   "version": "1.10.1",
   "description": "Contains binaries of the Ninja build system",
   "bin": {
-    "ninja": "./ninja"
+    "ninja-run": "./ninja-run"
   },
   "repository": {
     "type": "git",
