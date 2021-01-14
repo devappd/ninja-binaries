@@ -1,12 +1,12 @@
 {
-  "name": "ninja-binaries-npm",
+  "name": "@devappd/ninja-binaries-npm",
   "version": "1.10.2",
   "description": "Contains binaries of the Ninja build system",
   "bin": {
     "ninja-run": "./ninja-run"
   },
   "scripts": {
-    "postinstall": "./install.js"
+    "postinstall": "node ./install.js"
   },
   "repository": {
     "type": "git",
