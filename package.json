@@ -1,5 +1,5 @@
 {
-  "name": "ninja-binaries",
+  "name": "@devappd/ninja-binaries-npm",
   "version": "1.10.1",
   "description": "Contains binaries of the Ninja build system",
   "bin": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/banno/ninja-binaries.git"
+    "url": "git+https://github.com/devappd/ninja-binaries.git"
   },
   "keywords": [
     "ninja",
@@ -18,9 +18,12 @@
     "node": ">=4"
   },
   "author": "Eric Heikes <eric.heikes@banno.com>",
+  "contributors": [
+    "devappd"
+  ],
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/banno/ninja-binaries/issues"
+    "url": "https://github.com/devappd/ninja-binaries/issues"
   },
-  "homepage": "https://github.com/banno/ninja-binaries"
+  "homepage": "https://github.com/devappd/ninja-binaries"
 }
