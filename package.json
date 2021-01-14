@@ -26,9 +26,5 @@
     "url": "https://github.com/devappd/ninja-binaries/issues"
   },
   "homepage": "https://github.com/devappd/ninja-binaries",
-  "dependencies": {
-    "@zkochan/npm-conf": "^2.0.1",
-    "boolean": "^3.0.2",
-    "which": "^2.0.2"
-  }
+  "dependencies": {}
 }

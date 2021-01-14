@@ -5,41 +5,17 @@
 const spawn = require('child_process').spawn;
 const os = require('os');
 const path = require('path');
-const fs = require('fs');
-const { boolean } = require('boolean');
 
-const config = require('@zkochan/npm-conf')();
-const configLocation = config.get('ninja');
-const configUsePath = boolean(config.get('ninja-use-path'));
-
-let cmd;
-
-if (configLocation) {
-	if (fs.existsSync(configLocation))
-		cmd = path.resolve(configLocation);
-	else
-		throw new RangeError(`Configured ninja path ${configLocation} does not exist!`);
-} else if (configUsePath) {
-	const which = require('which');
-
-	try {
-		cmd = which.sync('ninja');
-	} catch (e) {
-		throw new RangeError(`Ninja not found in PATH! ${e}`);
-	}
+let binary;
+if (os.platform() === 'darwin') {
+	binary = 'ninja-mac';
+} else if (os.platform() === 'win32') {
+	binary = 'ninja-win.exe';
 } else {
-	let binary;
-	if (os.platform() === 'darwin') {
-		binary = 'ninja-mac';
-	} else if (os.platform() === 'win32') {
-		binary = 'ninja-win.exe';
-	} else {
-		binary = 'ninja-linux';
-	}
-
-	cmd = path.join(__dirname, 'binaries', binary);
+	binary = 'ninja-linux';
 }
 
+let cmd = path.join(__dirname, 'binaries', binary);
 let args = process.argv.slice(2);
 
 // HACK: Wrap quotes around paths to fix space usage
